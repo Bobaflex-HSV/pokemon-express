@@ -1,6 +1,9 @@
 const express = require("express");
 const router = express.Router();
+var cors = require('cors')
 const pokedex = require('../database/pokedex.json')
+
+router.use(cors());
 
 // retrieve all pokemon from pokedex database
 router.get("/pokemon", (req, res) => {
