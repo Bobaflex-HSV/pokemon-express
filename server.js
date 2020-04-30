@@ -1,8 +1,10 @@
 const express = require('express');
+const cors = require('cors')
 const pokemon_router = require('./routes/pokemon')
 
 const app = express();
 
+app.use(cors());
 app.use('/', pokemon_router)
 
 // use port set by environment variable if available, else set port to 3000
