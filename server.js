@@ -14,3 +14,10 @@ app.listen(port, () =>
 app.get("/pokemon", (req, res) => {
     res.send(pokedex);
   });
+
+// retrieve single pokemon with dynamic route on id
+app.get("/pokemon/:id", (req, res) => {
+    const { id } = req.params;
+    const pokemon = pokedex.filter((element) => element.id == req.params.id);
+    res.send(pokemon);
+});
