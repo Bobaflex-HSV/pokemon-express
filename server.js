@@ -1,4 +1,5 @@
-const express = require("express");
+const express = require('express');
+const pokedex = require('./database/pokedex')
 
 const app = express();
 
@@ -8,3 +9,8 @@ const port = process.env.PORT || 3000;
 app.listen(port, () =>
   console.log(`Server listening at http://localhost:${port}...`)
 );
+
+// retrieve all pokemon from pokedex database
+app.get("/pokemon", (req, res) => {
+    res.send(pokedex);
+  });
